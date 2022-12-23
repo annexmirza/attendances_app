@@ -1,6 +1,4 @@
-import 'package:attendance/view/screens/DashboardScreen.dart';
 import 'package:attendance/view/screens/Login_Screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

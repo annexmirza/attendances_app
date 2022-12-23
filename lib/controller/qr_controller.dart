@@ -24,7 +24,7 @@ class QrController extends GetxController {
       controller.pauseCamera();
       // print(data);
 
-      String data = await userExist(result!.code);
+      String data = await userExist("");
       if (data != '') {
         List credentials = data.split('///');
         if (!codeScaned &&

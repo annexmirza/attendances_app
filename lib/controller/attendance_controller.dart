@@ -438,7 +438,7 @@ class AttendanceController extends GetxController {
       if (connectivityResult == ConnectivityResult.mobile ||
           connectivityResult == ConnectivityResult.wifi) {
         result = scanData;
-        String data = result!.code;
+        String? data = result!.code;
         qrController.pauseCamera();
         // print(data);
 
