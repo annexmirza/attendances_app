@@ -14,11 +14,11 @@ class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
 
   final StateController stateController = Get.put(StateController());
-  final QrController qrController = Get.put(QrController());
+  // final QrController qrController = Get.put(QrController());
 
   @override
   Widget build(BuildContext context) {
-    qrController.qrPause();
+    // qrController.qrPause();
 
     return GetBuilder<QrController>(
         init: QrController(),
