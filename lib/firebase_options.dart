@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,40 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDZHAIEuGzH0lJoHWxB-86VTU3ZOj4PJz0',
-    appId: '1:122821072700:web:17afd23ccb14de7e2e3039',
-    messagingSenderId: '122821072700',
-    projectId: 'attandanceapp-a7c51',
-    authDomain: 'attandanceapp-a7c51.firebaseapp.com',
-    storageBucket: 'attandanceapp-a7c51.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAprDMwGqdzplZvYzgkJOzZ2Zg4twukIHY',
-    appId: '1:122821072700:android:3e53a7c744b771692e3039',
-    messagingSenderId: '122821072700',
-    projectId: 'attandanceapp-a7c51',
-    storageBucket: 'attandanceapp-a7c51.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAa0CI7NB1VPYOVdzUBt7LFMLh-GEPy4F8',
-    appId: '1:122821072700:ios:996b5d7b99ae6e332e3039',
-    messagingSenderId: '122821072700',
-    projectId: 'attandanceapp-a7c51',
-    storageBucket: 'attandanceapp-a7c51.appspot.com',
-    iosClientId: '122821072700-4n88ltfq44heri0pb8d7ek3di7l0l3m4.apps.googleusercontent.com',
-    iosBundleId: 'com.example.attendancesApp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAa0CI7NB1VPYOVdzUBt7LFMLh-GEPy4F8',
-    appId: '1:122821072700:ios:996b5d7b99ae6e332e3039',
-    messagingSenderId: '122821072700',
-    projectId: 'attandanceapp-a7c51',
-    storageBucket: 'attandanceapp-a7c51.appspot.com',
-    iosClientId: '122821072700-4n88ltfq44heri0pb8d7ek3di7l0l3m4.apps.googleusercontent.com',
-    iosBundleId: 'com.example.attendancesApp',
+    apiKey: 'AIzaSyDTGlgbL0daOyMyxAsP4Dg6TbOi3EncMDk',
+    appId: '1:54447661567:android:bca8c37d00d461fc3607ca',
+    messagingSenderId: '54447661567',
+    projectId: 'attendance-ff489',
+    storageBucket: 'attendance-ff489.appspot.com',
   );
 }
