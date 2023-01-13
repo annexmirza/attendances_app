@@ -20,8 +20,8 @@ class AuthController extends GetxController {
     try {
       var user = await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
-      attendanceController.userDataModel =
-          await dbController.getUserData(user.user?.uid);
+      attendanceController.userDataModel = await dbController
+          .getUserData(FirebaseAuth.instance.currentUser!.uid);
       attendanceController.update();
       Get.off(() => DashboardScreen());
     } on FirebaseAuthException catch (e) {

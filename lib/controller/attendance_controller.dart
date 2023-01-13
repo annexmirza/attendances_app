@@ -20,7 +20,7 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 class AttendanceController extends GetxController {
   NotificationController notificationController =
       Get.put(NotificationController());
-  String code = '';
+  String code = 'attendance';
   int lat = 0, long = 0;
   Position? userPosition;
   UserDataModel userDataModel = UserDataModel();
@@ -163,7 +163,8 @@ class AttendanceController extends GetxController {
       total = total + minute;
     });
     /* ---------------------- String for average check out ---------------------- */
-    var avgin = minutesToTime(total ~/ _avgCheckInMinute.length);
+    var avgin = minutesToTime(
+        total ~/ _avgCheckInMinute.length == 0 ? 1 : _avgCheckInMinute.length);
     total = 0;
     _avgCheckOutMinute.forEach((minute) {
       total = total + minute;
@@ -401,7 +402,6 @@ class AttendanceController extends GetxController {
   }
 
   clear() {
-    code = '';
     lat = 0;
     long = 0;
 
@@ -537,11 +537,6 @@ class AttendanceController extends GetxController {
     var user = FirebaseAuth.instance.currentUser?.uid;
     userPosition = await _determinePosition();
     userDataModel = await dbController.getUserData(user);
-    var qSnap = await FirebaseFirestore.instance.collection('TechOrra').get();
-    var doc = qSnap.docs[0];
-    var lat = doc['11'];
-    var long = doc['22'];
-    code = doc['33'];
-    checkLocation(lat, long);
+    Get.off(() => CheckinResult());
   }
 }

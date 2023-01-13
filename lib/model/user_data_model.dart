@@ -20,7 +20,7 @@ class UserDataModel {
 
   factory UserDataModel.fromDocumentSnapshot(DocumentSnapshot doc) =>
       UserDataModel(
-          id: doc["id"],
+          id: doc.id,
           name: doc["name"],
           type: doc["type"],
           designation: doc["designation"],

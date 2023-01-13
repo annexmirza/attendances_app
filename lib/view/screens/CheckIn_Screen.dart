@@ -50,10 +50,7 @@ class CheckinScreen extends StatelessWidget {
                     ? Container(
                         height: 0.4.sh,
                         width: 0.6.sw,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: ExactAssetImage("assets/Scanner.png"),
-                                fit: BoxFit.fill)),
+                        decoration: BoxDecoration(),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
