@@ -537,6 +537,5 @@ class AttendanceController extends GetxController {
     var user = FirebaseAuth.instance.currentUser?.uid;
     userPosition = await _determinePosition();
     userDataModel = await dbController.getUserData(user);
-    Get.off(() => CheckinResult());
   }
 }

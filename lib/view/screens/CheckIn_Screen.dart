@@ -46,29 +46,20 @@ class CheckinScreen extends StatelessWidget {
                   height: 0.03.sh,
                 ),
                 /*Scanning Image*/
-                attendanceController.dataFetched
-                    ? Container(
-                        height: 0.4.sh,
-                        width: 0.6.sw,
-                        decoration: BoxDecoration(),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            child: QRView(
-                                key: attendanceController.qrAttendanceKey,
-                                onQRViewCreated:
-                                    attendanceController.onQRViewCreated),
-                          ),
-                        ),
-                      )
-                    : Container(
-                        child: Text(
-                        "loading...",
-                        style: TextStyle(
-                            fontSize: 25.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      )),
+                Container(
+                  height: 0.4.sh,
+                  width: 0.6.sw,
+                  decoration: BoxDecoration(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      child: QRView(
+                          key: attendanceController.qrAttendanceKey,
+                          onQRViewCreated:
+                              attendanceController.onQRViewCreated),
+                    ),
+                  ),
+                ),
                 SizedBox(
                   height: 0.03.sh,
                 ),

@@ -60,6 +60,9 @@ class CheckinResult extends StatelessWidget {
                       onTap: () {
                         attendanceController.getUserData();
                         // stateController.iscorrect = false;
+                        attendanceController.dataFetched = true;
+                        attendanceController.update();
+
                         Get.offAll(() => CheckinScreen());
                       },
                       child: Container(
